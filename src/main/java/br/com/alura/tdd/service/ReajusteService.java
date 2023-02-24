@@ -9,10 +9,9 @@ public class ReajusteService {
 
 	public void concederReajuste(Funcionario funcionario, Desempenho desempenho) {
 		// TODO Auto-generated method stub
-		if (desempenho == Desempenho.A_DESEJAR) {
-			BigDecimal reajuste = funcionario.getSalario().multiply(new BigDecimal("0.03"));
+			BigDecimal perc = desempenho.PercentualReajuste();
+			BigDecimal reajuste = funcionario.getSalario().multiply(perc);
 			funcionario.ReajustarSalario(reajuste);
-		}
 		
 	}
 
